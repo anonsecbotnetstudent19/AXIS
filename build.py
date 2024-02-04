@@ -29,9 +29,9 @@ compileas = ["m-i.p-s.AXIS",
 	     "p-p.c-.AXIS",
              "a-r.m-4.AXIS",
 	     "s-p.c-.AXIS",
-	     "c-s.ky-.AXIS",
+	     "a-r.m-5.AXIS",
 	     "a-r.ch64-.AXIS",
-             "a-r.m-5.AXIS"]
+             "c-s.ky-.AXIS"]
 
 getarch = ['http://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-mips.tar.bz2',
 'http://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-mipsel.tar.bz2',
@@ -45,9 +45,9 @@ getarch = ['http://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-mips.ta
 'https://landley.net/aboriginal/downloads/old/binaries/1.2.6/cross-compiler-armv7l.tar.bz2',
 'https://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-armv4l.tar.bz2',
 'https://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-sparc.tar.bz2',
-'http://mirrors.mit.edu/kernel/tools/crosstool/files/bin/x86_64/9.5.0/x86_64-gcc-9.5.0-nolibc-csky-linux.tar.gz',
+'https://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-armv5l.tar.bz2',
 'http://mirrors.mit.edu/kernel/tools/crosstool/files/bin/x86_64/9.5.0/x86_64-gcc-9.5.0-nolibc-aarch64-linux.tar.gz',	   
-'https://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-armv5l.tar.bz2']
+'http://mirrors.mit.edu/kernel/tools/crosstool/files/bin/x86_64/9.5.0/x86_64-gcc-9.5.0-nolibc-csky-linux.tar.gz']
 
 ccs = ["cross-compiler-mips",
        "cross-compiler-mipsel",
@@ -61,9 +61,9 @@ ccs = ["cross-compiler-mips",
        "cross-compiler-armv7l",
        "cross-compiler-armv4l",
        "cross-compiler-sparc",
-       "x86_64-gcc-9.5.0-nolibc-csky-linux",
+       "cross-compiler-armv5l",
        "x86_64-gcc-9.5.0-nolibc-aarch64-linux",
-       "cross-compiler-armv5l",]
+       "x86_64-gcc-9.5.0-nolibc-csky-linux",]
 #Made By @i_am_unbekannt.
 def run(cmd):
     subprocess.call(cmd, shell=True)
