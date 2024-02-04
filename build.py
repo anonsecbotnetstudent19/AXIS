@@ -26,8 +26,11 @@ compileas = ["m-i.p-s.AXIS",
              "p-p.c-.AXIS",
              "i-5.8-6.AXIS",
              "m-6.8-k.AXIS",
-	    "p-p.c-.AXIS",
+	     "p-p.c-.AXIS",
              "a-r.m-4.AXIS",
+	     "s-p.c-.AXIS",
+	     "c-s.ky-.AXIS",
+	     "a-r.ch64-.AXIS",
              "a-r.m-5.AXIS"]
 
 getarch = ['http://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-mips.tar.bz2',
@@ -41,6 +44,9 @@ getarch = ['http://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-mips.ta
 'http://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-m68k.tar.bz2',
 'https://landley.net/aboriginal/downloads/old/binaries/1.2.6/cross-compiler-armv7l.tar.bz2',
 'https://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-armv4l.tar.bz2',
+'https://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-sparc.tar.bz2',
+'http://mirrors.mit.edu/kernel/tools/crosstool/files/bin/x86_64/9.5.0/x86_64-gcc-9.5.0-nolibc-csky-linux.tar.gz',
+'http://mirrors.mit.edu/kernel/tools/crosstool/files/bin/x86_64/9.5.0/x86_64-gcc-9.5.0-nolibc-aarch64-linux.tar.gz',	   
 'https://uclibc.org/downloads/binaries/0.9.30.1/cross-compiler-armv5l.tar.bz2']
 
 ccs = ["cross-compiler-mips",
@@ -54,8 +60,10 @@ ccs = ["cross-compiler-mips",
        "cross-compiler-m68k",
        "cross-compiler-armv7l",
        "cross-compiler-armv4l",
-       "cross-compiler-armv4l",
-       "cross-compiler-armv5l"]
+       "cross-compiler-sparc",
+       "x86_64-gcc-9.5.0-nolibc-csky-linux",
+       "x86_64-gcc-9.5.0-nolibc-aarch64-linux",
+       "cross-compiler-armv5l",]
 #Made By @i_am_unbekannt.
 def run(cmd):
     subprocess.call(cmd, shell=True)
@@ -64,11 +72,14 @@ run("rm -rf /var/www/html/* /var/lib/tftpboot/* /var/ftp/*")
 
 if get_arch == True:
     run("rm -rf cross-compiler-*")
+    run("rm -rf x86_64-gcc-9.5.0-nolibc-*")
 
     for arch in getarch:
         run("wget " + arch + " --no-check-certificate >> /dev/null")
         run("tar -xvf *tar.bz2")
+	run("tar -cvzf *tar.gz")
         run("rm -rf *tar.bz2")
+	run("rm -rf *tar.gz")    
 #Made By @i_am_unbekannt.
 num = 0
 for cc in ccs:
