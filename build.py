@@ -77,7 +77,7 @@ if get_arch == True:
     for arch in getarch:
         run("wget " + arch + " --no-check-certificate >> /dev/null")
         run("tar -xvf *tar.bz2")
-	run("tar -cvzf *tar.gz")
+	run("tar -xvf *tar.gz")
         run("rm -rf *tar.bz2")
 	run("rm -rf *tar.gz")    
 #Made By @i_am_unbekannt.
